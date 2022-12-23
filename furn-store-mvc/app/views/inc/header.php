@@ -187,10 +187,13 @@
                 <!--/.dropdown-->
                 <!--/.Login-->
                 <li class="nav-sign-in" style="width: 6.5rem;margin-top: -1rem;">
-                  <a href="<?php echo URLROOT ?>/pages/login">
+                  <?php if (!isset($_SESSION['user_id'])) { ?>
+                  <a href="<?php echo URLROOT ?>/users/login">
                     <img src="<?php echo URLROOT ?>/public/assets/images/icons/sign-in-icon.svg" alt="blog image" />
-
                   </a>
+                  <?php } else { ?>
+                  <a href="<?php echo URLROOT ?>/users/logout?>" style="width: 7.2rem;">logout</a>
+                  <?php } ?>
                 </li>
               </ul>
             </div>
@@ -223,6 +226,12 @@
                 </li>
                 <li><a href="<?php echo URLROOT ?>/pages/blog">blog</a></li>
                 <li><a href="<?php echo URLROOT ?>/pages/contact">contact</a></li>
+
+                <?php if (isset($_SESSION['user_id'])) { ?>
+                <li>
+                  <a href="<?php echo URLROOT ?>/products/index">products</a>
+                </li>
+                <?php } ?>
               </ul>
               <!--/.nav -->
             </div>

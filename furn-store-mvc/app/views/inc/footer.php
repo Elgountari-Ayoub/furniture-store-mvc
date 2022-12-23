@@ -134,10 +134,10 @@
     <!--/.text-center-->
   </div>
   <!--/.container-->
-
   <div id="scroll-Top">
     <div class="return-to-top">
-      <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+      <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="top" title=""
+        data-original-title="Back to Top" aria-hidden="true"></i>
     </div>
   </div>
   <!--/.scroll-Top-->

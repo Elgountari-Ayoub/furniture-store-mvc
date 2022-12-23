@@ -1,39 +1,30 @@
 <?php
-
-/**
- * Base Controller
- * Load the models and views
- */
-
+/* 
+   *  CORE CONTROLLER CLASS
+   *  Loads Models & Views
+   */
 class Controller
 {
-  protected $postModel;
-  // Load model
+  // Lets us load model from controllers
   public function model($model)
   {
-    //Require model file
+    // Require model file
     require_once '../app/models/' . $model . '.php';
-
-    // Instatiation $model
+    // exit;
+    // Instantiate model
     return new $model();
   }
 
-
-  //Load view
-  public function view($view, $data = [])
+  // Lets us load view from controllers
+  public function view($url, $data = [])
   {
     // Check for view file
-    if (file_exists('../app/views/' . $view . '.php')) {
-      require_once '../app/views/' . $view . '.php';
+    if (file_exists('../app/views/' . $url . '.php')) {
+      // Require view file
+      require_once '../app/views/' . $url . '.php';
     } else {
-      // View does not exist
-      // die func : stop the application
+      // No view exists
       die('View does not exist');
     }
-  }
-
-
-  public function __construct()
-  {
   }
 }

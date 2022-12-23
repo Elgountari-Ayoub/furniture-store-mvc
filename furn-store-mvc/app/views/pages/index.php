@@ -18,7 +18,7 @@ require APPROOT . '/views/inc/header.php';
   </ol>
   <!-- /ol-->
   <!--/.carousel-indicator -->
-  <h1 class="main-title">comfortable arm chair</h1>
+  <!-- <h1 class="main-title">comfortable arm chair</h1> -->
   <!--/.carousel-inner -->
   <div class="carousel-inner" role="listbox">
     <!-- .item -->
@@ -244,7 +244,8 @@ require APPROOT . '/views/inc/header.php';
         <div class="col-md-3">
           <div class="single-populer-products">
             <div class="single-populer-product-img mt40">
-              <img src="<?php echo URLROOT ?>/public/assets/images/populer-products/p1.png" alt="populer-products images" />
+              <img src="<?php echo URLROOT ?>/public/assets/images/populer-products/p1.png"
+                alt="populer-products images" />
             </div>
             <h2><a href="#">arm chair</a></h2>
             <div class="single-populer-products-para">
@@ -261,7 +262,8 @@ require APPROOT . '/views/inc/header.php';
               <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="single-inner-populer-product-img">
-                    <img src="<?php echo URLROOT ?>/public/assets/images/populer-products/p2.png" alt="populer-products images" />
+                    <img src="<?php echo URLROOT ?>/public/assets/images/populer-products/p2.png"
+                      alt="populer-products images" />
                   </div>
                 </div>
                 <div class="col-md-8 col-sm-12">
@@ -292,7 +294,8 @@ require APPROOT . '/views/inc/header.php';
           <div class="single-populer-products">
             <div class="single-populer-products">
               <div class="single-populer-product-img">
-                <img src="<?php echo URLROOT ?>/public/assets/images/populer-products/p3.png" alt="populer-products images" />
+                <img src="<?php echo URLROOT ?>/public/assets/images/populer-products/p3.png"
+                  alt="populer-products images" />
               </div>
               <h2><a href="#">hanging lamp</a></h2>
               <div class="single-populer-products-para">

@@ -1,38 +1,56 @@
 <?php
 class Pages extends Controller
 {
-
   public function __construct()
   {
-    // echo 'Pages Loaded';
+    // Load Models
+    $this->ProductModel = $this->model('Product');
+    $this->userModel = $this->model('User');
   }
 
+  // Load Homepage
   public function index()
   {
+
+    //Edited
+    // If logged in, redirect to posts
+    // if (isset($_SESSION['user_id'])) {
+    //   redirect('products');
+    // }
+
+    //Set Data
     $data = [
-      'title' => 'Welcome To The Furniture Store',
+      'title' => 'Welcome To SharePosts',
+      'description' => 'Simple social network built on the TraversyMVC PHP framework'
     ];
+
+    // Load homepage/index view
     $this->view('pages/index', $data);
   }
+
   public function about()
   {
+    //Set Data
     $data = [
-      'title' => 'About'
+      'version' => '1.0.0'
     ];
+
+    // Load about view
     $this->view('pages/about', $data);
   }
-
   public function newArrival()
   {
+    $products = $this->ProductModel->getProducts();
     $data = [
-      'title' => 'Welcome To The New Arrivals',
+      'Products' => $products
     ];
     $this->view('pages/newArrival', $data);
   }
   public function features()
   {
+    $products = $this->ProductModel->getProducts();
     $data = [
-      'title' => 'Welcome To The Features',
+      'Products' => $products
     ];
     $this->view('pages/features', $data);
   }

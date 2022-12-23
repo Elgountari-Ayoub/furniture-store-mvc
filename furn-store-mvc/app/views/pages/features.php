@@ -30,74 +30,33 @@ require APPROOT . '/views/inc/header.php';
     <!--/.section-header-->
     <div class="feature-content">
       <div class="row">
+        <?php foreach ($data['Products'] as $i => $product) : ?>
         <div class="col-sm-3">
           <div class="single-feature">
-            <img src="<?php echo URLROOT ?>/public/assets/images/features/f1.jpg" alt="feature image" />
+            <img style="max-height: 10rem;
+            margin-left: auto;
+            " src="<?php echo URLROOT . '/public/assets/images/' . $product->img ?>" alt=" feature image">
             <div class="single-feature-txt text-center">
               <p>
+
+                <?php for ($i = 0; $i < $product->starsCount; $i++) : ?>
+                <?php if ($i > 5) {
+                      break;
+                    } ?>
                 <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                <?php endfor; ?>
+
+                <?php for ($i = 5; $i > $product->starsCount; $i--) : ?>
                 <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                <span class="feature-review">(45 review)</span>
+                <?php endfor; ?>
+                <span class="feature-review">($<?php echo $product->reviewsCount ?> review)</span>
               </p>
-              <h3><a href="#">designed sofa</a></h3>
-              <h5>$160.00</h5>
+              <h3><a href="#"><?php echo $product->title ?></a></h3>
+              <h5>$<?php echo $product->price ?></h5>
             </div>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="single-feature">
-            <img src="<?php echo URLROOT ?>/public/assets/images/features/f2.jpg" alt="feature image" />
-            <div class="single-feature-txt text-center">
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                <span class="feature-review">(45 review)</span>
-              </p>
-              <h3><a href="#">dinning table </a></h3>
-              <h5>$200.00</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="single-feature">
-            <img src="<?php echo URLROOT ?>/public/assets/images/features/f3.jpg" alt="feature image" />
-            <div class="single-feature-txt text-center">
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                <span class="feature-review">(45 review)</span>
-              </p>
-              <h3><a href="#">chair and table</a></h3>
-              <h5>$100.00</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="single-feature">
-            <img src="<?php echo URLROOT ?>/public/assets/images/features/f4.jpg" alt="feature image" />
-            <div class="single-feature-txt text-center">
-              <p>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                <span class="feature-review">(45 review)</span>
-              </p>
-              <h3><a href="#">modern arm chair</a></h3>
-              <h5>$299.00</h5>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
